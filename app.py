@@ -1,10 +1,11 @@
 from flask import Flask
 
+from flask import render_template, session, request, redirect, url_for, flash
+
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/login', methods=['GET', 'POST'])
 def home():
-    return "Flask deploy foda"
-
+    return render_template ('login.html', title='Pagina Login')
 if __name__ == '__main__':
-    app.run()
+    app.run
